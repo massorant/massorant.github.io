@@ -41,25 +41,3 @@ This work is published under [MIT][mit] License.
 [chirpy]: https://github.com/cotes2020/jekyll-theme-chirpy/
 [CD]: https://en.wikipedia.org/wiki/Continuous_deployment
 [mit]: https://github.com/cotes2020/chirpy-starter/blob/master/LICENSE
-
-## 以下是massorant自己的话
-
-和任何教程都不一样，我没有在本地额外安装任何东西包括jekyll、ruby等，直接通过Click the Use this template button and then select Create a new repository然后修改配置文件en-->zh-CN。打开myname.github.io网址就有了。并且通过_post正常写博客。
-调试也是在github上调试的，比本地调试需要的时间稍微多一些。
-
-### 期间发生了一些我无法理解的事情：
-1、刚开始我不了解index.html指向另一个html文件的原理
-```code
----
-layout: home
-# Index page
----
-```
-打开网址只显示这个指令，以为需要自己添加内容，于是复制了dome的index.html，然后显示出来了。但是第二天换回原来的index.html也能正常显示。并且后续我发现，如果配置文件写错或者文件结构新增文件夹都会让指向失败，只显示出指令。
-
-我怀疑是github服务器的网络延迟 + 我本地的浏览器cookies导致的。
-
-2、2024-10-15--正常运行了，但是侧边导航栏显示的是英文，我想设置成中文。我第一次在配置文件里填写lang: zh-CN 的时候没有显示中文，看到注释的是需要_data/locales/的路径下需要有对应的zh-CN.yml文件（当时我的库中连locales文件夹都没有，但是别人的dome有）。于是我去dome里复制文件夹带文件。完成后网站又只显示index.html的指向命令，不显示正常的博客内容。我把创建的locales文件夹删除，网站正常，同时也显示出了中文，匪夷所思！
-
-2024-10-16--第二天，时隔十几个小时，我提交了新的readme.md，博客进不去了，我还原回来，还是进不去。我去配置文件_config.yml把lang的参数由zh-CN修改成en , layout: home正常渲染出来了，但是侧边导航栏是英文版本。
-我又把lang参数修改成zh_CN,并且复制了jekyll-theme-chirpy/_data/locales/zh-CN.yml到我的_data/中，正常且中文。
